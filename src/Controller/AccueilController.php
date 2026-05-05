@@ -16,3 +16,8 @@ class AccueilController extends AbstractController
         ]);
     }
 }
+#[Route('/bonjour/{prenom}', name: 'app_bonjour')]
+public function bonjour(string $prenom): Response
+{
+    return new Response("<h1>Bonjour $prenom ! Bienvenue sur Symfony 7.4</h1>");
+}
