@@ -15,9 +15,10 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
-}
-#[Route('/bonjour/{aziz}', name: 'app_bonjour')]
+    #[Route('/bonjour/{aziz}', name: 'app_bonjour')]
 public function bonjour(string $aziz): Response 
 {
     return new Response("<h1>Bonjour $aziz ! Bienvenue sur Symfony 7.4</h1>");
 }
+}
+
