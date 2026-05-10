@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma To-Do List{% endblock %}
+
+{% block body %}
+    <h1>Liste des tâches</h1>
+    <a href="{{ path('tache_ajouter') }}" class="btn btn-primary">Ajouter une tâche (Test)</a>
+
+    <ul>
+    {% for tache in taches %}
+        <li style="{{ tache.terminee ? 'text-decoration: line-through;' : '' }}">
+            <strong>{{ tache.titre }}</strong> 
+            <a href="{{ path('tache_detail', {id: tache.id}) }}">Détails</a>
+            
+            {% if not tache.terminee %}
+                | <a href="{{ path('tache_terminer', {id: tache.id}) }}">✔️ Terminer</a>
+            {% endif %}
+        </li>
+    {% else %}
+        <li>Aucune tâche pour le moment.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
