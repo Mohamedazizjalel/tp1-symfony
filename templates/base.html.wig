@@ -1,3 +1,0 @@
-<nav>
-    <a href="{{ path('tache_liste') }}">Mes Tâches</a>
-</nav>
